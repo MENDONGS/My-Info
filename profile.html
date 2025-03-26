@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- 🎥 BACKGROUND VIDEO -->
+    <video autoplay muted loop id="bg-video">
+        <source src="Tiktok Neon WHITE Lines Background video _ Footage _ Screensaver 1Hour.mp4" type="video/mp4">
+    </video>
+
+    <!-- 🔥 PROFILE CONTAINER -->
+    <div class="profile-container">
+        <div class="profile-pic">
+            <img src="475794743_1351730846279102_7972516310424807364_n (1).jpg" alt="Profile Picture">
+        </div>
+        <h1 class="profile-name">John Doe</h1>
+        <p class="profile-desc">Cyberpunk Enthusiast | Developer | Music Lover</p>
+        <button class="info-btn" onclick="toggleInfo()">INFO</button>
+    </div>
+
+    <!-- ℹ️ INFO PANEL -->
+    <div class="info-panel" id="infoPanel">
+        <div class="info-content">
+            <h2>About Me</h2>
+            <p>Hi! I'm John Doe, a cyberpunk enthusiast, developer, and music lover. I create futuristic, aesthetic designs.</p>
+        </div>
+    </div>
+
+    <div class="music-box">
+        <div class="music-frame">
+            <div class="music-controls">
+                <button class="music-btn" onclick="toggleMute()">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.1" onchange="setVolume(this.value)">
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- 🔗 SOCIAL LINKS -->
+    <div class="social-container">
+        <a href="https://www.facebook.com/jairus.estrada.33" class="social-button facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@jairusestrada8284" class="social-button youtube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mendongs/" class="social-button instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://discord.com/channels/@me" class="social-button discord"><i class="fab fa-discord"></i></a>
+    </div>
+
+    <!-- 🎶 BACKGROUND MUSIC -->
+    <audio id="bg-music" src="cintamu sepahit topi miring.mp3" autoplay loop></audio>
+
+</body>
+</html>

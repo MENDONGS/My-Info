@@ -1,0 +1,177 @@
+/* 🌌 MONOCHROME CYBERPUNK INTRO PAGE */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.intro-body {
+    background: #111; /* Dark Grey */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 🔥 QR CODE CONTAINER */
+.qr-container {
+    margin-top: 20px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.qr-container canvas {
+    background: black;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🎯 GLITCH HOVER EFFECT */
+.qr-container canvas:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0px 0px 20px white;
+}
+
+/* ✨ QR CODE TEXT */
+.qr-text {
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+    text-shadow: 0px 0px 10px white;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* 📦 CENTER CONTAINER */
+.intro-container {
+    text-align: center;
+    background: rgba(20, 20, 20, 0.85); /* Dark Grey */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 30px white;
+    border: 2px solid white;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ✨ SUPER GLITCH EFFECT SA "WELCOME" */
+.glitch-text {
+    font-size: 42px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 0px 10px white, 0px 0px 20px grey;
+    position: relative;
+    animation: glitch 0.4s infinite alternate;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: "WELCOME TO MY PROFILE";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-shadow: none;
+}
+
+.glitch-text::before {
+    top: -2px;
+    left: -2px;
+    color: grey;
+    animation: glitch-anim 0.2s infinite alternate-reverse;
+}
+
+.glitch-text::after {
+    top: 2px;
+    left: 2px;
+    color: white;
+    animation: glitch-anim 0.2s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px 10px white, -2px -2px 10px grey; }
+    100% { text-shadow: -2px -2px 10px white, 2px 2px 10px grey; }
+}
+
+@keyframes glitch-anim {
+    0% { transform: translateX(-2px); }
+    100% { transform: translateX(2px); }
+}
+
+/* 🔥 ANIMATED START BUTTON */
+.start-btn {
+    background: black;
+    color: white;
+    padding: 15px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    border: 3px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ⚡ GLITCHING BORDER EFFECT */
+.start-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, white, transparent);
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.start-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.start-btn:hover {
+    background: white;
+    color: black;
+    box-shadow: 0px 0px 30px white;
+    transform: scale(1.1);
+}
+
+/* 🔥 SCANLINE EFFECT (For that CRT Vibe) */
+.intro-body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0px, rgba(0, 0, 0, 0.05) 2px);
+    pointer-events: none;
+    opacity: 0.3;
+    animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media screen and (max-width: 600px) {
+    .glitch-text {
+        font-size: 32px;
+    }
+
+    .start-btn {
+        padding: 12px 30px;
+        font-size: 18px;
+    }
+}
